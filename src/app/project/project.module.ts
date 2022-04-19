@@ -5,6 +5,7 @@ import { ProjectRoutingModule } from './project-routing.module';
 import { ProjectComponent } from './project.component';
 import { ProjectAddComponent } from './project-add/project-add.component';
 import { ProjectUpdateComponent } from './project-update/project-update.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { ProjectUpdateComponent } from './project-update/project-update.componen
   ],
   imports: [
     CommonModule,
-    ProjectRoutingModule
+    ProjectRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class ProjectModule { }

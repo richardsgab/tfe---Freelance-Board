@@ -18,12 +18,12 @@ export class ProjectAddComponent implements OnInit {
       location : [null, ],
       client : [null],
       description: [null],
-
-      autorisationDossier: [null],
+      
       reglements: [null],
       contextualDocs: [null],
       collaborators: [null],
       logNotes: [null],
+      autorisationDossier: [null],
 
       plansOriginals: [null],
       plansAutoCad: [null],

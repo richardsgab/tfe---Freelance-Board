@@ -1,2 +1,23 @@
 
 <p>Formulaire soon !!</p>
+<div class="chapter">
+    <h2>Add a new project</h2>
+    <form [formGroup]="addForm"> 
+        <div class="form-group">            
+            <h3>General Info</h3>
+            <label for="pname" class="form-label">Project name</label>
+            <input type="text" class="form-control" id="pname" formControlName="name">  
+            <label for="location" class="form-label">Project location</label>
+            <input type="text" class="form-control" id="location" formControlName="location"> 
+            <label for="client" class="form-label">Client</label>
+            <input type="text" class="form-control" id="client" formControlName="client"> 
+            <label for="description" class="form-label">Project description</label>
+            <input type="text-area" class="form-control" id="description" formControlName="description">             
+        </div>
+        <div class="form-group">
+            <h3>Documents</h3>
+            <label for="reg">Select a file:</label>
+            <input type="file" id="reg" formControlName="reglements">
+        </div>
+    </form>
+</div>
