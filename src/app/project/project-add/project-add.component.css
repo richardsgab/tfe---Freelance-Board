@@ -1,0 +1,28 @@
+
+.titleadd{
+    text-align: center;
+}
+/* .form-group{
+    margin-bottom: 26px 0;
+    background-color: aqua;
+} */
+h3 {
+    margin: 16px 0;
+}
+h5{
+    margin-top: 10px 0;;
+}
+.info {
+    margin: 30px 3%;
+}
+.docs{
+    margin: 30px 3%;
+}
+.visual{
+    margin: 30px 3%;
+}
+.col-auto{
+    /* width: 150px;
+    height: 40px; */
+    margin: 30px 3%;
+}

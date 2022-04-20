@@ -17,10 +17,12 @@ export class ProjectAddComponent implements OnInit {
       name: [null,],
       location : [null, ],
       client : [null],
+      createdAt : [null],
       description: [null],
       
       reglements: [null],
-      contextualDocs: [null],
+      cadastre: [null],
+      contextDocs: [null],
       collaborators: [null],
       logNotes: [null],
       autorisationDossier: [null],
@@ -28,8 +30,10 @@ export class ProjectAddComponent implements OnInit {
       plansOriginals: [null],
       plansAutoCad: [null],
       plansRhino: [null],
+      plansPDF: [null],
 
       imgClient: [null],
+      imgClientIdeas: [null],
       imgPhotos: [null],
       imgInspiration: [null]    
     })

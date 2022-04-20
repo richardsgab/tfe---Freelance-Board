@@ -1,23 +1,99 @@
 
 <p>Formulaire soon !!</p>
 <div class="chapter">
-    <h2>Add a new project</h2>
+    <h1 class="titleadd">Add a new project</h1>
     <form [formGroup]="addForm"> 
-        <div class="form-group">            
+        <div class="form-group info" >            
             <h3>General Info</h3>
-            <label for="pname" class="form-label">Project name</label>
-            <input type="text" class="form-control" id="pname" formControlName="name">  
-            <label for="location" class="form-label">Project location</label>
-            <input type="text" class="form-control" id="location" formControlName="location"> 
-            <label for="client" class="form-label">Client</label>
-            <input type="text" class="form-control" id="client" formControlName="client"> 
-            <label for="description" class="form-label">Project description</label>
-            <input type="text-area" class="form-control" id="description" formControlName="description">             
+            <div class="mb-3">
+                <label for="pname" class="form-label">Project name</label>
+                <input type="text" class="form-control" id="pname" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Project location</label>
+                <input type="text" class="form-control" id="location" formControlName="location">
+            </div> 
+            <div class="mb-3">
+                <label for="client" class="form-label">Client</label>
+                <input type="text" class="form-control" id="client" formControlName="client">
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Created at</label>
+                <input type="date" class="form-control" id="date" formControlName="createdAt">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Project description</label>
+                <textarea class="form-control" id="description" rows="3" formControlName="description"></textarea>
+            </div>
+            
+            <!-- <input type="text-area" class="form-control" id="description" formControlName="description">              -->
         </div>
-        <div class="form-group">
+        <div class="form-group docs">
             <h3>Documents</h3>
-            <label for="reg">Select a file:</label>
-            <input type="file" id="reg" formControlName="reglements">
+            <div class="mb-3">
+                <label for="formFile1" class="form-label">Reglements</label>
+                <input class="form-control" type="file" id="formFile1" formControlName="reglements">
+            </div>
+            <div class="mb-3">
+                <label for="formFile2" class="form-label">Cadastre</label>
+                <input class="form-control" type="file" id="formFile2" formControlName="cadastre">
+            </div>
+            <div class="mb-3">
+                <label for="formFile3" class="form-label">Collaborators</label>
+                <input class="form-control" type="file" id="formFile3" formControlName="collaborators">
+            </div>
+            <div class="mb-3">
+                <label for="formFile4" class="form-label">Contextual</label>
+                <input class="form-control" type="file" id="formFile4" formControlName="contextDocs">
+            </div>
+            <div class="mb-3">
+                <label for="formFile5" class="form-label">Notes</label>
+                <input class="form-control" type="file" id="formFile5" formControlName="logNotes">
+            </div>
+            <div class="mb-3">
+                <label for="formFile6" class="form-label">Dossier d'Autorisation</label>
+                <input class="form-control" type="file" id="formFile6" formControlName="autorisationDossier">
+            </div>            
+        </div>
+        <div class="form-group visual">
+            <h3>Visuals</h3>
+            <h5>Images & Photos</h5>
+            <div class="mb-3">
+                <label for="formFile7" class="form-label">Originals images (from Client)</label>
+                <input class="form-control" type="file" id="formFile1" formControlName="imgClient">
+            </div>
+            <div class="mb-3">
+                <label for="formFile8" class="form-label">Client Ideas</label>
+                <input class="form-control" type="file" id="formFile8" formControlName="imgClientIdeas">
+            </div>
+            <div class="mb-3">
+                <label for="formFile9" class="form-label">Photos</label>
+                <input class="form-control" type="file" id="formFile9" formControlName="imgPhotos">
+            </div>
+            <div class="mb-3">
+                <label for="formFile10" class="form-label">Inspiration</label>
+                <input class="form-control" type="file" id="formFile10" formControlName="imgInspiration">
+            </div>
+            <h5>Plans</h5>
+            <div class="mb-3">
+                <label for="formFile11" class="form-label">Originals plans (from Client)</label>
+                <input class="form-control" type="file" id="formFile11" formControlName="plansOriginals">
+            </div>
+            <div class="mb-3">
+                <label for="formFile12" class="form-label">Autocad</label>
+                <input class="form-control" type="file" id="formFile12" formControlName="plansAutoCad">
+            </div>
+            <div class="mb-3">
+                <label for="formFile13" class="form-label">Rhino</label>
+                <input class="form-control" type="file" id="formFile13" formControlName="plansRhino">
+            </div>
+            <div class="mb-3">
+                <label for="formFile14" class="form-label">PDF</label>
+                <input class="form-control" type="file" id="formFile14" formControlName="plansPDF">
+            </div>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Add new Project</button>
         </div>
     </form>
 </div>
