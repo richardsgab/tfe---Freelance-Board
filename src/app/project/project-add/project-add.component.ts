@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Project } from 'src/app/models/project';
 
 @Component({
   selector: 'app-project-add',
@@ -9,15 +10,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ProjectAddComponent implements OnInit {
 
   addForm!: FormGroup;
+  projects : Project[] = [];
 
   constructor(private _fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.addForm = this._fb.group({
-      name: [null,],
+      name: [null, [Validators.required]],
       location : [null, ],
-      client : [null],
-      createdAt : [null],
+      client : [null, [Validators.required]],
+      createdAt : [null, [Validators.required]],
       description: [null],
       
       reglements: [null],
@@ -37,6 +39,15 @@ export class ProjectAddComponent implements OnInit {
       imgPhotos: [null],
       imgInspiration: [null]    
     })
+  }
+
+  addProject(){
+    if(this.addForm.valid){
+      console.log("🙌");
+      let projctadd : Project = {...this.addForm.value};
+      this.projects.push(projctadd);
+      
+    }
   }
 
 }
