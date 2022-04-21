@@ -1,0 +1,40 @@
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add a new Client</h4>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">                    
+                    <form [formGroup]="addClientForm">
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label for="cname" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="cname" formControlName="cname">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cemail" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="cemail" formControlName="cemail">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cphone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="cphone" formControlName="cphone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cadress" class="form-label">Adress</label>
+                                <input type="text" class="form-control" id="cadress" formControlName="cadress">
+                            </div>
+                        </div>
+                    </form>                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+
+ 
+
