@@ -1,7 +1,7 @@
 export class Project {
     name! : string;
     location! : string;
-    client!: string;
+    client!: number;
     createdAt!: Date;
     description! : string;
     reglements! : File;

@@ -7,6 +7,7 @@ import { ProjectAddComponent } from './project-add/project-add.component';
 import { ProjectUpdateComponent } from './project-update/project-update.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ClientAddComponent } from './client-add/client-add.component';
+import { LogComponent } from './log/log.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ClientAddComponent } from './client-add/client-add.component';
     ProjectComponent,
     ProjectAddComponent,
     ProjectUpdateComponent,
-    ClientAddComponent
+    ClientAddComponent,
+    LogComponent
   ],
   imports: [
     CommonModule,

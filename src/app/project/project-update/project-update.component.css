@@ -1,0 +1,16 @@
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+    /* background-color: aquamarine; */
+}
+.btns{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 40px;
+}
+.big{
+    margin: 0 30px
+}
+.btn-info{
+    border-radius: 10px;
+}

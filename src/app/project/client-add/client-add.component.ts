@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Clients } from 'src/app/models/clients';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-client-add',
@@ -8,9 +11,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ClientAddComponent implements OnInit {
 
-  addClientForm! : FormGroup;
+  @Output()
+  onSubmit: EventEmitter<boolean>
 
-  constructor(private _fb: FormBuilder) { }
+  addClientForm! : FormGroup;
+  clnts : Clients[] = [];
+  constructor(private _fb: FormBuilder, private _clientService : ClientService, private _route : Router) 
+  { 
+    this.onSubmit = new EventEmitter<boolean>();
+  }
 
   ngOnInit(): void {
     this.addClientForm = this._fb.group({
@@ -21,4 +30,27 @@ export class ClientAddComponent implements OnInit {
     })
   }
 
+  // addClient (){
+  //   if(this.addClientForm.valid){
+  //     console.log("🙌");
+  //     let clsadd : Clients = {...this.addClientForm.value};
+  //     this.clnts.push(clsadd);
+  //     this.addClientForm.reset();
+  //   }else {
+  //     console.log("🤢");
+  //     this.addClientForm.markAllAsTouched();
+  //   }
+  // }
+
+  addClient()
+  {
+    if(this.addClientForm.valid){
+      let clientA = { ...this.addClientForm.value, id : 0};      
+      this._clientService.add(clientA).subscribe({
+        next: () => this.onSubmit.emit(true),
+      });
+    }
+  }
+
 }
+

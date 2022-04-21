@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Clients } from 'src/app/models/clients';
 import { Project } from 'src/app/models/project';
+import { ClientService } from 'src/app/services/client.service';
 
 @Component({
   selector: 'app-project-add',
@@ -11,10 +13,18 @@ export class ProjectAddComponent implements OnInit {
 
   addForm!: FormGroup;
   projects : Project[] = [];
+  clientsList : Clients[] = [];
 
-  constructor(private _fb: FormBuilder) { }
+  constructor(private _fb: FormBuilder, private clientService: ClientService) { }
+
+  refreshClients() {
+    this.clientService.getClients().subscribe(data => this.clientsList = data);
+  }
 
   ngOnInit(): void {
+
+    this.refreshClients();
+
     this.addForm = this._fb.group({
       name: [null, [Validators.required]],
       location : [null, ],
@@ -46,7 +56,10 @@ export class ProjectAddComponent implements OnInit {
       console.log("🙌");
       let projctadd : Project = {...this.addForm.value};
       this.projects.push(projctadd);
-      
+      this.addForm.reset();
+    }else {
+      console.log("🤢");
+      this.addForm.markAllAsTouched();
     }
   }
 

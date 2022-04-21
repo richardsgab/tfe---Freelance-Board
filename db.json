@@ -1,0 +1,49 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "cname": "Ly",
+      "cemail": "ly@gmail.com"
+    },
+    {
+      "id": 2,
+      "cname": "Morre",
+      "cemail": "morre@gmail.com"
+    },
+    {
+      "cname": "rintintin",
+      "cemail": "tin@hu.ju",
+      "cphone": null,
+      "cadress": null,
+      "id": 3
+    },
+    {
+      "cname": "test",
+      "cemail": "a@a",
+      "cphone": "00",
+      "cadress": "rue ...",
+      "id": 4
+    },
+    {
+      "cname": "erzr",
+      "cemail": "rez",
+      "cphone": "rez",
+      "cadress": "rez",
+      "id": 5
+    },
+    {
+      "cname": "Vlad",
+      "cemail": "dd",
+      "cphone": "dd",
+      "cadress": "dd",
+      "id": 6
+    },
+    {
+      "cname": "uyuy",
+      "cemail": "juju",
+      "cphone": "515615",
+      "cadress": "hucd",
+      "id": 7
+    }
+  ]
+}

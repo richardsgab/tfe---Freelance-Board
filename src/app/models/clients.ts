@@ -1,4 +1,4 @@
-export class Client {
+export class Clients {
     cname! : string;
     cemail! : string;
     cphone! : string;
