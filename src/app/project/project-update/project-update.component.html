@@ -6,22 +6,24 @@
     <div class="btns mb-3">
         <div class="big">
             <button type="button" class="btn btn-info btn-lg">
-                <a class="link" routerLink="/Project/add">Info</a>
+                <a class="link" routerLink="/Project/update/info">Info</a>
             </button>
         </div>
         <div class="big">
-            <button type="button" class="btn btn-info btn-lg">Documents</button>
+            <button type="button" class="btn btn-info btn-lg" routerLink="/Project/update/docs">Documents</button>
         </div>
         <div class="big">
-            <button type="button" class="btn btn-info btn-lg">Visuals</button>
+            <button type="button" class="btn btn-info btn-lg" routerLink="/Project/update/visuals">Visuals</button>
         </div>
+
         <div class="big">
             <button type="button" class="btn btn-success btn-lg">
-                <a class="link" routerLink="./Project/log">Log</a></button>
+                <a class="link" routerLink="/Project/update/log">Log</a></button>
         </div>
         <div class="big">
             <button type="button" class="btn btn-warning btn-lg">Dossier d'Autorisation</button>
         </div>
     </div>
 </div>
+
 <router-outlet></router-outlet>
