@@ -4,17 +4,17 @@ h1{
     
 }
 .chapter{
-    margin: 0 16px;    
-    /* background-color: aquamarine; */
+    margin: 0 16px;   
 }
 .btns{
     display: flex;
     justify-content: center; 
+    flex-wrap: wrap;
     margin: 0 1%; 
+    /* background-color: aquamarine; */
 }
 .big{
-    margin: 0 2%;
-    
+    margin: 1% 2%;    
 }
 .btn-info{
     border-radius: 10px;

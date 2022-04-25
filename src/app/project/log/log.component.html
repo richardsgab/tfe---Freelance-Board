@@ -1,20 +1,24 @@
 <p>log works!</p>
-
+<h3 class="text-center mb-4">To do..</h3>
 <div class="chapter">
-    <a class="btn btn-primary" routerLink="/demo/demo7add">Add new entry</a>
-    <table class="table table-hover">
+    <div class="d-flex justify-content-evenly mb-4">
+        <a class="btn btn-success" routerLink="../log/newlog">Add new To do</a>
+    </div>
+    
+    <table class="table table-hover mx-2">
         <thead>
             <th scope="col">Date</th>
             <th scope="col">To Do</th>            
+            <th scope="col">Actions</th>            
         </thead>
         <tbody>
-            <!-- <tr scope="row" *ngFor="let entry of entries; let i = index">
-                <td>{{user.lastname}}</td>
-                <td>{{user.firstname}}</td>
-                <td>{{user.birthdate | date : "dd MM yyyy"}}</td>
-                <td>{{user.email}}</td>
-                <td><a class="btn btn-primary" routerLink="/demo/demo7/{{i}}">Details</a></td>
-            </tr> -->
+            <tr scope="row" *ngFor="let l of logList; let i = index">
+                <!-- <td>{{logList.logDate | date : "dd MM yyyy"}}</td>
+                <td>{{logList.logTxt}}</td>                
+                <td>{{Update}}</td> -->
+                <!-- <td>{{Delete}}</td> //<td><a class="btn btn-danger" routerLink="/demo/demo7/{{i}}">Details</a></td> -->
+                <!-- <td><a class="btn btn-primary" routerLink="/demo/demo7/{{i}}">Details</a></td> -->
+            </tr>
         </tbody>
     </table>
 </div>

@@ -11,6 +11,7 @@ import { LogComponent } from './log/log.component';
 import { InfoComponent } from './info/info.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { VisualsComponent } from './visuals/visuals.component';
+import { NewlogComponent } from './log/newlog/newlog.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { VisualsComponent } from './visuals/visuals.component';
     LogComponent,
     InfoComponent,
     DocumentsComponent,
-    VisualsComponent
+    VisualsComponent,
+    NewlogComponent
   ],
   imports: [
     CommonModule,

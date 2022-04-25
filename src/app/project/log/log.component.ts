@@ -16,6 +16,7 @@ export class LogComponent implements OnInit {
   constructor(private _logService : LogService) { }
 
   ngOnInit(): void {
+    this.logList = this._logService.getAll();
   }
 
 }

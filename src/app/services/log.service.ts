@@ -7,9 +7,15 @@ import { Log } from '../models/log';
 export class LogService {
 
   private _logList : Log[] = [
-    // { logDate : any , logText : ""}
+    { logDate : new Date(1, 5, 2022) , logTxt : ""}
   ];
 
   constructor() { }
+
+  getAll() : Log[]{
+    return this._logList;
+  }
+
+  //delete()......how?
 }
 
