@@ -1,1 +1,33 @@
 <p>info works!</p>
+<h3 class="mb-4">Add or Update Project General Info</h3>
+<form>
+    <div class="form-group info" >            
+        <!-- <h3>General Info</h3> -->
+        <div class="mb-3">
+            <label for="pname" class="form-label">Project name</label>
+            <input type="text" class="form-control" id="pname" formControlName="name">
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Project adress</label>
+            <input type="text" class="form-control" id="location" formControlName="location">
+        </div> 
+        <!-- <div class=" mb-3">            
+            <label for="client" class="form-label">Select Client or Add new one</label>
+            <div class="input-group">                        
+                <select class="form-select" id="client" formControlName="client">
+                    <option selected>Select Client Name</option>
+                    <option *ngFor="let client of clientsList" value="">{{client.cname}}</option>                        
+                </select>
+            <button class="btn btn-success" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#myModal">Add New Client</button>
+            </div>            
+        </div> -->
+        <div class="mb-3">
+            <label for="date" class="form-label">Created at</label>
+            <input type="date" class="form-control" id="date" formControlName="createdAt">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Project description</label>
+            <textarea class="form-control" id="description" rows="3" formControlName="description"></textarea>
+        </div>           
+    </div>
+</form>

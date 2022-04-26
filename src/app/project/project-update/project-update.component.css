@@ -1,7 +1,6 @@
 h1{
     text-align: center;
-    margin-bottom: 50px;
-    
+    margin-bottom: 50px;    
 }
 .chapter{
     margin: 0 16px;   
@@ -19,3 +18,12 @@ h1{
 .btn-info{
     border-radius: 10px;
 }
+a:link, a:visited {
+    color: white;
+}
+a:hover {
+    color: rgb(212, 205, 205);
+}
+/* a:active {
+    color: gray;
+  } */

@@ -1,25 +1,41 @@
 <p>log works!</p>
-<h3 class="text-center mb-4">To do..</h3>
+<h2 class="text-center mb-4">To do..</h2>
 <div class="chapter">
-    <div class="d-flex justify-content-evenly mb-4">
-        <a class="btn btn-success" routerLink="../log/newlog">Add new To do</a>
-    </div>
-    
+    <div class="d-flex justify-content-evenly mb-4">        
+        <button class="btn btn-success" (click)="toggleForm()">Add new To do</button>
+        <button class="btn btn-outline-success" (click)="toggleForm()">Print List</button>
+    </div>            
+        
+    <div *ngIf="displayForm">
+        <form [formGroup]="addnewLogForm" (ngSubmit)="addNewLog()">
+            <div class="form-group mb-3">
+                <div class="input-group mb-3">
+                    <input type="date" class="form-control" placeholder="Date" formControlName="logDate">            
+                    <input type="text" class="form-control" placeholder="To do" formControlName="logTxt">
+                    <button type="submit" class="btn btn-success">Add to List</button>
+                  </div>
+            </div>
+        </form>
+    </div> 
+<!-- <app-client-add (onSubmit)="refreshClients()"></app-client-add> -->
     <table class="table table-hover mx-2">
         <thead>
             <th scope="col">Date</th>
             <th scope="col">To Do</th>            
-            <th scope="col">Actions</th>            
+            <th scope="col">Actions</th> 
+            <!-- <app-showlist [produits]="products" (onUpQtt)="upQuantity($event)" (onDelete)="deleteFromCart($event)" ></app-showlist>            -->
         </thead>
         <tbody>
             <tr scope="row" *ngFor="let l of logList; let i = index">
-                <!-- <td>{{logList.logDate | date : "dd MM yyyy"}}</td>
-                <td>{{logList.logTxt}}</td>                
-                <td>{{Update}}</td> -->
-                <!-- <td>{{Delete}}</td> //<td><a class="btn btn-danger" routerLink="/demo/demo7/{{i}}">Details</a></td> -->
-                <!-- <td><a class="btn btn-primary" routerLink="/demo/demo7/{{i}}">Details</a></td> -->
+                <td>{{l.logDate | date : "dd MM yyyy"}}</td>
+                <td>{{l.logTxt}}</td>
+                <td><button class="btn btn-outline-info" type="button" (click)="updateLog()">Update</button></td>
+                <td><button class="btn btn-outline-danger" type="button" (click)="deleteLog(i)">Delete</button></td>                
             </tr>
         </tbody>
     </table>
 </div>
+
+
+
 
