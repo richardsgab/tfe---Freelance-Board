@@ -16,8 +16,8 @@
                 <label for="client" class="form-label">Select Client or Add new one</label>
                 <div class="input-group">                        
                     <select class="form-select" id="client" formControlName="client">
-                        <option selected>Select Client Name</option>
-                        <option *ngFor="let client of clientsList" value="">{{client.cname}}</option>                        
+                        <option>Select Client Name</option>
+                        <option *ngFor="let client of clientsList" [value]="client.id">{{client.cname}}</option>                        
                     </select>
                 <button class="btn btn-success" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#myModal">Add New Client</button>
                 </div>
@@ -37,27 +37,27 @@
             <h3>Documents</h3>
             <div class="mb-3">
                 <label for="formFile1" class="form-label">Reglements</label>
-                <input class="form-control" type="file" id="formFile1" formControlName="reglements">
+                <input class="form-control" type="file" id="formFile1" (change)="fileChanged($event, 'reglements')">
             </div>
             <div class="mb-3">
                 <label for="formFile2" class="form-label">Cadastre</label>
-                <input class="form-control" type="file" id="formFile2" formControlName="cadastre">
+                <input class="form-control" type="file" id="formFile2" (change)="fileChanged($event, 'cadastre')">
             </div>
             <div class="mb-3">
                 <label for="formFile3" class="form-label">Collaborators</label>
-                <input class="form-control" type="file" id="formFile3" formControlName="collaborators">
+                <input class="form-control" type="file" id="formFile3" (change)="fileChanged($event, 'collaborators')">
             </div>
             <div class="mb-3">
                 <label for="formFile4" class="form-label">Contextual</label>
-                <input class="form-control" type="file" id="formFile4" formControlName="contextDocs">
+                <input class="form-control" type="file" id="formFile4" (change)="fileChanged($event, 'contextDocs')">
             </div>
             <div class="mb-3">
                 <label for="formFile5" class="form-label">Notes</label>
-                <input class="form-control" type="file" id="formFile5" formControlName="logNotes">
+                <input class="form-control" type="file" id="formFile5" (change)="fileChanged($event, 'logNotes')">
             </div>
             <div class="mb-3">
                 <label for="formFile6" class="form-label">Dossier d'Autorisation</label>
-                <input class="form-control" type="file" id="formFile6" formControlName="autorisationDossier">
+                <input class="form-control" type="file" id="formFile6" (change)="fileChanged($event, 'autorisationDossier')">
             </div>            
         </div>
 
@@ -66,36 +66,36 @@
             <h5>Images & Photos</h5>
             <div class="mb-3">
                 <label for="formFile7" class="form-label">Originals images (from Client)</label>
-                <input class="form-control" type="file" id="formFile1" formControlName="imgClient">
+                <input class="form-control" type="file" id="formFile1" (change)="fileChanged($event, 'imgClient')">
             </div>
             <div class="mb-3">
                 <label for="formFile8" class="form-label">Client Ideas</label>
-                <input class="form-control" type="file" id="formFile8" formControlName="imgClientIdeas">
+                <input class="form-control" type="file" id="formFile8" (change)="fileChanged($event, 'imgClientIdeas')">
             </div>
             <div class="mb-3">
                 <label for="formFile9" class="form-label">Photos</label>
-                <input class="form-control" type="file" id="formFile9" formControlName="imgPhotos">
+                <input class="form-control" type="file" id="formFile9" (change)="fileChanged($event, 'imgPhotos')">
             </div>
             <div class="mb-3">
                 <label for="formFile10" class="form-label">Inspiration</label>
-                <input class="form-control" type="file" id="formFile10" formControlName="imgInspiration">
+                <input class="form-control" type="file" id="formFile10" (change)="fileChanged($event, 'imgInspiration')">
             </div>
             <h5>Plans</h5>
             <div class="mb-3">
                 <label for="formFile11" class="form-label">Originals plans (from Client)</label>
-                <input class="form-control" type="file" id="formFile11" formControlName="plansOriginals">
+                <input class="form-control" type="file" id="formFile11" (change)="fileChanged($event, 'plansOriginals')">
             </div>
             <div class="mb-3">
                 <label for="formFile12" class="form-label">Autocad</label>
-                <input class="form-control" type="file" id="formFile12" formControlName="plansAutoCad">
+                <input class="form-control" type="file" id="formFile12" (change)="fileChanged($event, 'plansAutoCad')">
             </div>
             <div class="mb-3">
                 <label for="formFile13" class="form-label">Rhino</label>
-                <input class="form-control" type="file" id="formFile13" formControlName="plansRhino">
+                <input class="form-control" type="file" id="formFile13" (change)="fileChanged($event, 'plansRhino')">
             </div>
             <div class="mb-3">
                 <label for="formFile14" class="form-label">PDF</label>
-                <input class="form-control" type="file" id="formFile14" formControlName="plansPDF">
+                <input class="form-control" type="file" id="formFile14" (change)="fileChanged($event, 'plansPDF')">
             </div>
         </div>
 

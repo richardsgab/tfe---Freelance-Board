@@ -7,13 +7,19 @@ import { Project } from '../models/project';
 })
 export class ProjectService {
 
-  private _projectList = Project[] = [
-    { name: "", createdAt: new Date(1, 5, 2022), client: "", location: ""}
-  ];
+  private _projectList: Project[] = [];
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {
+    // this._projectList = 
+   }
 
-  addP(P : Project[]) : any {
-    return this._http.post<Project[]>('http://localhost:3000/logs', projects);
+  addP(p : Project) : any {
+    return this._http.post<Project[]>('http://localhost:3000/Projects', p);
+  }
+  getAllP(): Project[]{
+   return this._projectList;
+  }
+  getP() {
+    return this._http.get<Project[]>('http://localhost:3000/projects');
   }
 }

@@ -16,6 +16,7 @@ export class ClientAddComponent implements OnInit {
 
   addClientForm! : FormGroup;
   clnts : Clients[] = [];
+  
   constructor(private _fb: FormBuilder, private _clientService : ClientService, private _route : Router) 
   { 
     this.onSubmit = new EventEmitter<boolean>();
@@ -28,19 +29,7 @@ export class ClientAddComponent implements OnInit {
       cphone : [null],
       cadress : [null]
     })
-  }
-
-  // addClient (){
-  //   if(this.addClientForm.valid){
-  //     console.log("🙌");
-  //     let clsadd : Clients = {...this.addClientForm.value};
-  //     this.clnts.push(clsadd);
-  //     this.addClientForm.reset();
-  //   }else {
-  //     console.log("🤢");
-  //     this.addClientForm.markAllAsTouched();
-  //   }
-  // }
+  }  
 
   addClient()
   {

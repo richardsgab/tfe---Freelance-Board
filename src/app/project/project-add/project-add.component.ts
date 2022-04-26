@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Clients } from 'src/app/models/clients';
 import { Project } from 'src/app/models/project';
 import { ClientService } from 'src/app/services/client.service';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-project-add',
@@ -12,10 +13,11 @@ import { ClientService } from 'src/app/services/client.service';
 export class ProjectAddComponent implements OnInit {
 
   addForm!: FormGroup;
-  projects : Project[] = [];
+  // projects : Project[] = [];
+  projectList : Project[] = [];
   clientsList : Clients[] = [];
 
-  constructor(private _fb: FormBuilder, private clientService: ClientService) { }
+  constructor(private _fb: FormBuilder, private clientService: ClientService, private projectService: ProjectService) { }
 
   refreshClients() {
     this.clientService.getClients().subscribe(data => this.clientsList = data);
@@ -55,11 +57,32 @@ export class ProjectAddComponent implements OnInit {
     if(this.addForm.valid){
       console.log("🙌");
       let projctadd : Project = {...this.addForm.value};
-      this.projects.push(projctadd);
-      this.addForm.reset();
+
+      console.log(projctadd);
+      // this.projects.push(projctadd);
+      this.projectService.addP(projctadd).subscribe(() => {
+        this.addForm.reset();
+        this.addPtoShow();
+      })
     }else {
       console.log("🤢");
       this.addForm.markAllAsTouched();
+    }
+  }
+
+  addPtoShow(){    
+    this.projectService.addP(this.addForm.value).subscribe( () =>{
+      this.projectService.getP().subscribe(data => this.projectList = data)
+    })
+  }
+
+//transforme le fichier en binary
+  fileChanged(event: any, name: string) {
+    const reader = new FileReader();
+    const file = event.target.files[0];
+    reader.readAsDataURL(file);
+    reader.onload = e => {
+      this.addForm.get(name)?.setValue(e.target?.result);
     }
   }
 

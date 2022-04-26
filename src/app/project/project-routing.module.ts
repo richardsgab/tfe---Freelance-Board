@@ -6,6 +6,7 @@ import { LogComponent } from './log/log.component';
 import { ProjectAddComponent } from './project-add/project-add.component';
 import { ProjectUpdateComponent } from './project-update/project-update.component';
 import { ProjectComponent } from './project.component';
+import { ShowProjectsComponent } from './show-projects/show-projects.component';
 import { VisualsComponent } from './visuals/visuals.component';
 
 const routes: Routes = [{ path: '', component: ProjectComponent, children: [
@@ -16,6 +17,7 @@ const routes: Routes = [{ path: '', component: ProjectComponent, children: [
     { path : 'docs', component: DocumentsComponent},
     { path : 'visuals', component: VisualsComponent}
   ]},
+  { path: 'show', component: ShowProjectsComponent }
 ] }];
 
 @NgModule({

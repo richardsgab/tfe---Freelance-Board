@@ -1,1 +1,20 @@
 <p>show-projects works!</p>
+<div class="chapter">
+    <h2>Projects List</h2>    
+    <table class="table table-hover mx-2">
+        <thead>
+            <th scope="col">Created at</th>
+            <th scope="col">Name</th>            
+            <th scope="col">Client</th>                        
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let proj of projectsList; let i = index">
+                <td>{{l.logDate | date : "dd MM yyyy"}}</td>
+                <td>{{l.logTxt}}</td>
+                <td><button class="btn btn-outline-info" type="button" (click)="updateLog()">Update</button></td>
+                <td><button class="btn btn-outline-danger" type="button" (click)="deleteLog(i)">Delete</button></td>                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
