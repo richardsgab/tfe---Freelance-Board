@@ -1,4 +1,5 @@
 export class Log {
     logDate! : Date;
-    logTxt! : string
+    logTxt! : string;
+    id! : number
 }

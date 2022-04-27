@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from 'src/app/models/project';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-show-projects',
@@ -13,10 +14,10 @@ export class ShowProjectsComponent implements OnInit {
   createdAt!: Date;
   client! : string;
 
-  constructor() { }
+  constructor(private projectService : ProjectService) { }
 
   ngOnInit(): void {
-   
+    this.projectService.getP().subscribe(data => this.projectList = data);
   }
 
 }

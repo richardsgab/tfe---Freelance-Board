@@ -9,7 +9,7 @@ import { Log } from '../models/log';
 export class LogService {
 
   private _logList : Log[] = [
-    { logDate : new Date(1, 5, 2022) , logTxt : ""}
+    { logDate : new Date(1, 5, 2022) , logTxt : "", id: 0}
   ];
 
   constructor(private _http: HttpClient) { }
@@ -23,14 +23,11 @@ export class LogService {
     return this._logList;
   }
 
-  getLogs() {
-    return this._http.get<Log[]>('http://localhost:3000/logs');
+  getLogs(p_id: number) {
+    return this._http.get<Log[]>('http://localhost:3000/logs?projectId=' + p_id);
   }
 
 
-  deleteLog(ind : number) : Log[]{
-    this._logList.splice(ind, 1);
-    return this._logList;
-  }
 }
+
 

@@ -2,17 +2,18 @@
 <div class="chapter">
     <h2>Projects List</h2>    
     <table class="table table-hover mx-2">
-        <thead>
-            <th scope="col">Created at</th>
+        <thead>           
             <th scope="col">Name</th>            
-            <th scope="col">Client</th>                        
+            <th scope="col">Client</th> 
+            <th scope="col">Created at</th>                       
+            <th scope="col">Update</th>                       
         </thead>
         <tbody>
-            <tr scope="row" *ngFor="let proj of projectsList; let i = index">
-                <td>{{l.logDate | date : "dd MM yyyy"}}</td>
-                <td>{{l.logTxt}}</td>
-                <td><button class="btn btn-outline-info" type="button" (click)="updateLog()">Update</button></td>
-                <td><button class="btn btn-outline-danger" type="button" (click)="deleteLog(i)">Delete</button></td>                
+            <tr scope="row" *ngFor="let proj of projectList; let i = index">
+                <td>{{proj.name}}</td>                
+                <td>{{proj.client}}</td>
+                <td>{{proj.createdAt | date : "dd MM yyyy"}}</td>                            
+                <td><a [routerLink]="['/Project/update/', proj.id]" class="btn btn-warning btn-outline">Edit</a></td>                            
             </tr>
         </tbody>
     </table>

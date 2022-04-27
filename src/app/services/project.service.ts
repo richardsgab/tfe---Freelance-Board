@@ -22,4 +22,12 @@ export class ProjectService {
   getP() {
     return this._http.get<Project[]>('http://localhost:3000/projects');
   }
+
+  getProject(id: number) {
+    return this._http.get<Project>('http://localhost:3000/projects/' + id);
+  }
+
+  getLastProject() {
+    return this._http.get<Project[]>('http://localhost:3000/projects/?_sort=id&_limit=1&_order=desc');
+  }
 }

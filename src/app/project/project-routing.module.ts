@@ -11,7 +11,7 @@ import { VisualsComponent } from './visuals/visuals.component';
 
 const routes: Routes = [{ path: '', component: ProjectComponent, children: [
   { path: 'add', component: ProjectAddComponent },
-  { path: 'update', component: ProjectUpdateComponent , children : [
+  { path: 'update/:id', component: ProjectUpdateComponent , children : [
     { path : 'log', component: LogComponent},
     { path : 'info', component: InfoComponent},
     { path : 'docs', component: DocumentsComponent},

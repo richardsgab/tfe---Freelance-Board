@@ -17,20 +17,19 @@
             </div>
         </form>
     </div> 
-<!-- <app-client-add (onSubmit)="refreshClients()"></app-client-add> -->
+
     <table class="table table-hover mx-2">
         <thead>
             <th scope="col">Date</th>
             <th scope="col">To Do</th>            
-            <th scope="col">Actions</th> 
-            <!-- <app-showlist [produits]="products" (onUpQtt)="upQuantity($event)" (onDelete)="deleteFromCart($event)" ></app-showlist>            -->
+            <th scope="col">Actions</th>            
         </thead>
         <tbody>
             <tr scope="row" *ngFor="let l of logList; let i = index">
                 <td>{{l.logDate | date : "dd MM yyyy"}}</td>
                 <td>{{l.logTxt}}</td>
                 <td><button class="btn btn-outline-info" type="button" (click)="updateLog()">Update</button></td>
-                <td><button class="btn btn-outline-danger" type="button" (click)="deleteLog(i)">Delete</button></td>                
+                <td><button class="btn btn-outline-danger" type="button" (click)="deleteLog()">Delete</button></td>                
             </tr>
         </tbody>
     </table>

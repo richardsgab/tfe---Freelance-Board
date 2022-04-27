@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Clients } from 'src/app/models/clients';
 import { Project } from 'src/app/models/project';
 import { ClientService } from 'src/app/services/client.service';
@@ -17,7 +18,12 @@ export class ProjectAddComponent implements OnInit {
   projectList : Project[] = [];
   clientsList : Clients[] = [];
 
-  constructor(private _fb: FormBuilder, private clientService: ClientService, private projectService: ProjectService) { }
+  constructor(
+    private _fb: FormBuilder,
+     private clientService: ClientService, 
+     private projectService: ProjectService,
+     private router: Router,
+  ) { }
 
   refreshClients() {
     this.clientService.getClients().subscribe(data => this.clientsList = data);
@@ -62,7 +68,8 @@ export class ProjectAddComponent implements OnInit {
       // this.projects.push(projctadd);
       this.projectService.addP(projctadd).subscribe(() => {
         this.addForm.reset();
-        this.addPtoShow();
+        //this.addPtoShow();
+        this.router.navigateByUrl('/Project/update/0')
       })
     }else {
       console.log("🤢");
@@ -70,11 +77,11 @@ export class ProjectAddComponent implements OnInit {
     }
   }
 
-  addPtoShow(){    
-    this.projectService.addP(this.addForm.value).subscribe( () =>{
-      this.projectService.getP().subscribe(data => this.projectList = data)
-    })
-  }
+  // addPtoShow(){    
+  //   this.projectService.addP(this.addForm.value).subscribe( () =>{
+  //     this.projectService.getP().subscribe(data => this.projectList = data)
+  //   })
+  // }
 
 //transforme le fichier en binary
   fileChanged(event: any, name: string) {
