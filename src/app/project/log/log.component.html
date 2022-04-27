@@ -29,7 +29,7 @@
                 <td>{{l.logDate | date : "dd MM yyyy"}}</td>
                 <td>{{l.logTxt}}</td>
                 <td><button class="btn btn-outline-info" type="button" (click)="updateLog()">Update</button></td>
-                <td><button class="btn btn-outline-danger" type="button" (click)="deleteLog()">Delete</button></td>                
+                <td><button class="btn btn-outline-danger" type="button" (click)="deleteLog(i)">Delete</button></td>                
             </tr>
         </tbody>
     </table>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Project } from 'src/app/models/project';
 
 @Component({
   selector: 'app-info',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  project! : Project;
+  pname! : string;
+
+  constructor(private activatedRoute: ActivatedRoute,) { }
 
   ngOnInit(): void {
   }
