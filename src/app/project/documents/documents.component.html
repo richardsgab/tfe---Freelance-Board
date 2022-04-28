@@ -1,28 +1,90 @@
-<p>documents works!</p>
-<div class="form-group docs">
-    <h3 class="mb-4">Add Documents</h3>
-    <div class="mb-3">
-        <label for="formFile1" class="form-label">Reglements</label>
-        <input class="form-control" type="file" id="formFile1" formControlName="reglements">
+<div class="chapter">
+    <p>documents works!</p>
+    <h3 class="text-center mb-4 ms-5">Documents</h3>
+
+    <div class="d-flex justify-content-between mb-4"> 
+        <h4 class="mt-4">Reglements</h4>
+        <button class="btn btn-success my-3" (click)="displayReg = !displayReg">Add new</button>
     </div>
-    <div class="mb-3">
-        <label for="formFile2" class="form-label">Cadastre</label>
-        <input class="form-control" type="file" id="formFile2" formControlName="cadastre">
+    <div *ngIf="displayReg">
+        <div class="mb-3">
+            <label for="formFile1" class="form-label">Reglements</label>
+            <input class="form-control" type="file" id="formFile1" formControlName="reglements">
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="formFile3" class="form-label">Collaborators</label>
-        <input class="form-control" type="file" id="formFile3" formControlName="collaborators">
+    <table class="table table-hover mx-2">    
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">File</th>          
+        </thead>
+        <tbody>
+            <tr scope="row">
+                <td>0</td>
+                <td>filename</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div class="d-flex justify-content-between mb-4"> 
+        <h4 class="mt-4">Cadastre</h4>
+        <button class="btn btn-success my-3" (click)="displayCadtr = !displayCadtr">Add new</button>
     </div>
-    <div class="mb-3">
-        <label for="formFile4" class="form-label">Contextual</label>
-        <input class="form-control" type="file" id="formFile4" formControlName="contextDocs">
+    <div *ngIf="displayCadtr">
+        <div class="mb-3">
+            <label for="formFile2" class="form-label">Cadastre</label>
+            <input class="form-control" type="file" id="formFile2" formControlName="cadastre">
+        </div>
     </div>
-    <div class="mb-3">
-        <label for="formFile5" class="form-label">Notes</label>
-        <input class="form-control" type="file" id="formFile5" formControlName="logNotes">
+    table
+
+    <div class="d-flex justify-content-between mb-4"> 
+        <h4 class="mt-4">Collaborators</h4>
+        <button class="btn btn-success my-3" (click)="displayColl = !displayColl">Add new</button>
     </div>
-    <div class="mb-3">
-        <label for="formFile6" class="form-label">Dossier d'Autorisation</label>
-        <input class="form-control" type="file" id="formFile6" formControlName="autorisationDossier">
-    </div>            
+    <div *ngIf="displayColl">
+        <div class="mb-3">
+            <label for="formFile3" class="form-label">Collaborators</label>
+            <input class="form-control" type="file" id="formFile3" formControlName="collaborators">
+        </div>
+    </div>
+    table
+
+    <div class="d-flex justify-content-between mb-4"> 
+        <h4 class="mt-4">Contextual</h4>
+        <button class="btn btn-success my-3" (click)="displayContx = !displayContx">Add new</button>
+    </div>
+    <div *ngIf="displayContx">
+        <div class="mb-3">
+            <label for="formFile3" class="form-label">Collaborators</label>
+            <input class="form-control" type="file" id="formFile3" formControlName="collaborators">
+        </div>
+    </div>
+    table
+
+    <div class="d-flex justify-content-between mb-4"> 
+        <h4 class="mt-4">Notes</h4>
+        <button class="btn btn-success my-3" (click)="displayNotes = !displayNotes">Add new</button>
+    </div>
+    <div *ngIf="displayNotes">
+        <div class="mb-3">
+            <label for="formFile5" class="form-label">Notes</label>
+            <input class="form-control" type="file" id="formFile5" formControlName="logNotes">
+        </div>
+    </div>
+    table
+
+    <div class="d-flex justify-content-between mb-4"> 
+        <h4 class="mt-4">Dossier d'Autorisation</h4>
+        <button class="btn btn-success my-3" (click)="displayDAut =!displayDAut">Add new</button>
+    </div>
+    <div *ngIf="displayDAut">
+        <div class="mb-3">
+            <label for="formFile6" class="form-label">Dossier d'Autorisation</label>
+            <input class="form-control" type="file" id="formFile6" formControlName="autorisationDossier">
+        </div> 
+    </div>
+    table
+
 </div>
+

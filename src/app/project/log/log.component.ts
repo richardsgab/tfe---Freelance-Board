@@ -50,9 +50,12 @@ export class LogComponent implements OnInit {
     this.displayForm = true;   
   }  
 
-  deleteLog(index: number){    
-    this.logList.splice(index, 1); 
-    return this.logList;   
+  deleteLog(id: number){  
+    this.logService.delLog(id).subscribe(() => {
+      this.logService.getLogs(this.id).subscribe(data => this.logList = data);
+    })  
+    // this.logList.splice(index, 1); 
+    // return this.logList;   
   }
   // deleteLog(){
     

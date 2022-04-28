@@ -1,8 +1,8 @@
 <p>info works!</p>
-<h3 class="proj-name mb-4">hola {{project}}</h3>
-<form>
+<h3 class="proj-name mb-4">Info Général</h3>
+<form [formGroup]="fg">
     <div class="form-group info" >            
-        <!-- <h3>General Info</h3> -->
+        
         <div class="mb-3">
             <label for="pname" class="form-label">Project name</label>
             <input type="text" class="form-control" id="pname" formControlName="name">

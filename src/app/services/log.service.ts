@@ -27,8 +27,8 @@ export class LogService {
     return this._http.get<Log[]>('http://localhost:3000/logs?projectId=' + p_id);
   }
 
-  delLog(){
-    return this._http.delete<Log[]>('http://localhost:3000/logs');
+  delLog(id: number){
+    return this._http.delete<Log[]>('http://localhost:3000/logs/' + id);
   }
 
 }

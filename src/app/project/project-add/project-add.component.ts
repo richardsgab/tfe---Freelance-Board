@@ -65,23 +65,16 @@ export class ProjectAddComponent implements OnInit {
       let projctadd : Project = {...this.addForm.value};
 
       console.log(projctadd);
-      // this.projects.push(projctadd);
-      this.projectService.addP(projctadd).subscribe(() => {
-        this.addForm.reset();
-        //this.addPtoShow();
+      
+      this.projectService.addP(projctadd).subscribe(() => {        
+        this.addForm.reset();        
         this.router.navigateByUrl('/Project/update/0')
       })
     }else {
       console.log("🤢");
       this.addForm.markAllAsTouched();
     }
-  }
-
-  // addPtoShow(){    
-  //   this.projectService.addP(this.addForm.value).subscribe( () =>{
-  //     this.projectService.getP().subscribe(data => this.projectList = data)
-  //   })
-  // }
+  }  
 
 //transforme le fichier en binary
   fileChanged(event: any, name: string) {
