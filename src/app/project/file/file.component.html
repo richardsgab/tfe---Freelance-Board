@@ -1,0 +1,55 @@
+<div class="chapter">
+    <h3>{{project?.name}} Files</h3>
+    <table class="table table-hover mx-2 docs">
+        <thead>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>            
+            <th scope="col">Actions</th>            
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let f of fileList; let i = index">
+                <td>{{f.name}}</td>
+                <td>{{f.category}}</td>                       
+                <td><button class="btn btn-outline-danger" type="button" (click)="deleteFile(f.id)">Delete</button></td>                
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<form [formGroup]="addFile" (ngSubmit)="addNewFile()">
+    <div class="form-group docs mb-3">
+        <h3>Add Files</h3>
+        <div class="mb-3">
+            <label for="fname" class="form-label">File name</label>
+            <input class="form-control" type="text" id="fname" formControlName="name">                
+        </div>
+        <div class="mb-3">
+            <label for="file" class="form-label">Select category</label>                    
+            <select class="form-select" id="file" formControlName="category">
+                <option value="reglements">Reglements</option>
+                <option value="cadastre">Cadastre</option>
+                <option value="contextDocs">Contextual</option>
+                <option value="collaborators">From Collaborators</option>
+                <option value="logNotes">Notes</option>
+                <option value="autorisationDossier">Dossier d'Autorisation</option>
+                <option value="imgClient">Images from Client</option>
+                <option value="imgClientIdeas">Client ideas</option>
+                <option value="imgPhotos">Photos</option>
+                <option value="imgInspiration">Inspiration</option>
+                <option value="plansOriginals">Originals Plans</option>
+                <option value="plansAutoCad">AutoCad Plans</option>
+                <option value="plansRhino">Rhino Plans</option>
+                <option value="plansPDF">PDF Plans</option>                    
+            </select>                       
+        </div>
+        <div class="input-group docs">
+            <div class="mb-1">
+                <label for="File1" class="form-label">File</label>
+                <input class="form-control" type="file" id="File1" (change)="fileChanged($event)">                        
+            </div>
+            <button class="btn btn-success mb-1">Add new File</button>
+        </div>                
+    </div>
+
+    
+</form>

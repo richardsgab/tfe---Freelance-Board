@@ -12,6 +12,8 @@ import { InfoComponent } from './info/info.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { VisualsComponent } from './visuals/visuals.component';
 import { ShowProjectsComponent } from './show-projects/show-projects.component';
+import { FileComponent } from './file/file.component';
+
 
 
 
@@ -26,6 +28,7 @@ import { ShowProjectsComponent } from './show-projects/show-projects.component';
     DocumentsComponent,
     VisualsComponent,
     ShowProjectsComponent,
+    FileComponent,
     
   ],
   imports: [

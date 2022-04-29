@@ -18,7 +18,7 @@ export class LogComponent implements OnInit {
   addnewLogForm! : FormGroup;
   displayForm:boolean = false;
   id: number;
-  // logItem! : null;
+  
 
   constructor(private logService : LogService,
                private _fb: FormBuilder, 
@@ -54,12 +54,9 @@ export class LogComponent implements OnInit {
     this.logService.delLog(id).subscribe(() => {
       this.logService.getLogs(this.id).subscribe(data => this.logList = data);
     })  
-    // this.logList.splice(index, 1); 
-    // return this.logList;   
+      
   }
-  // deleteLog(){
-    
-  // }
+  
 
 
   

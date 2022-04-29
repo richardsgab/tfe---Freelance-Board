@@ -1,29 +1,21 @@
 <p>project-update works!</p>
 <div class="mb-3">
-    <h1 class="proj-name">{{project.name}}</h1>
+    <h1 class="proj-name">{{project?.name}}</h1>
 </div>
 <div class="chapter d-inline-flex p-2 justify-content-center">
     <ul class="list-group">
-        <li class="list-group-item">{{project.location}}</li>
-        <li class="list-group-item">{{project.createdAt}}</li>
-        <li class="list-group-item">{{project.description}}</li>        
+        <li class="list-group-item">Location : {{project?.location}}</li>
+        <li class="list-group-item">Created at : {{project?.createdAt}}</li>
+        <li class="list-group-item">Description : {{project?.description}}</li>        
     </ul>
 </div>
 <div class="chapter">    
     <div class="btns mb-3">
-        <!-- <div class="big">
-            <button type="button" class="btn btn-info btn-lg">
-                <a class="link" [routerLink]="['/Project/update/', id ,'info']">Info</a>
-            </button>
-        </div> -->
+        
         <div class="big">
             <button type="button" class="btn btn-info btn-lg" >
-                <a class="link" [routerLink]="['/Project/update/', id ,'docs']">Documents</a></button>
-        </div>
-        <div class="big">
-            <button type="button" class="btn btn-info btn-lg">
-                <a class="link" [routerLink]="['/Project/update/', id ,'visuals']">Visuals</a></button>
-        </div>
+                <a class="link" [routerLink]="['/Project/update/', id ,'docs']">Files</a></button>
+        </div>       
 
         <div class="big">
             <button type="button" class="btn btn-success btn-lg">

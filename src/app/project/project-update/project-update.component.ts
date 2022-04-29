@@ -33,8 +33,6 @@ export class ProjectUpdateComponent implements OnInit {
     }
   }
 
-  // showName(){
-  //   this.pname = this.projects.
-  // }
+  
 
 }

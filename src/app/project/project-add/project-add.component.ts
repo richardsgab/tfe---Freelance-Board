@@ -6,6 +6,7 @@ import { Project } from 'src/app/models/project';
 import { ClientService } from 'src/app/services/client.service';
 import { ProjectService } from 'src/app/services/project.service';
 
+
 @Component({
   selector: 'app-project-add',
   templateUrl: './project-add.component.html',
@@ -14,12 +15,15 @@ import { ProjectService } from 'src/app/services/project.service';
 export class ProjectAddComponent implements OnInit {
 
   addForm!: FormGroup;
-  // projects : Project[] = [];
+  addFile! : FormGroup;
+  
   projectList : Project[] = [];
-  clientsList : Clients[] = [];
+  clientsList : Clients[] = []; 
+  fileList : File[] = [];
+  id!: number;
 
   constructor(
-    private _fb: FormBuilder,
+     private _fb: FormBuilder,
      private clientService: ClientService, 
      private projectService: ProjectService,
      private router: Router,
@@ -40,22 +44,22 @@ export class ProjectAddComponent implements OnInit {
       createdAt : [null, [Validators.required]],
       description: [null],
       
-      reglements: [null],
-      cadastre: [null],
-      contextDocs: [null],
-      collaborators: [null],
-      logNotes: [null],
-      autorisationDossier: [null],
+      // reglements: [null],
+      // cadastre: [null],
+      // contextDocs: [null],
+      // collaborators: [null],
+      // logNotes: [null],
+      // autorisationDossier: [null],
 
-      plansOriginals: [null],
-      plansAutoCad: [null],
-      plansRhino: [null],
-      plansPDF: [null],
+      // plansOriginals: [null],
+      // plansAutoCad: [null],
+      // plansRhino: [null],
+      // plansPDF: [null],
 
-      imgClient: [null],
-      imgClientIdeas: [null],
-      imgPhotos: [null],
-      imgInspiration: [null]    
+      // imgClient: [null],
+      // imgClientIdeas: [null],
+      // imgPhotos: [null],
+      // imgInspiration: [null]    
     })
   }
 
@@ -66,9 +70,9 @@ export class ProjectAddComponent implements OnInit {
 
       console.log(projctadd);
       
-      this.projectService.addP(projctadd).subscribe(() => {        
+      this.projectService.addP(projctadd).subscribe((p:any) => {        
         this.addForm.reset();        
-        this.router.navigateByUrl('/Project/update/0')
+        this.router.navigateByUrl('/Project/update/' + p.id)
       })
     }else {
       console.log("🤢");
@@ -76,14 +80,6 @@ export class ProjectAddComponent implements OnInit {
     }
   }  
 
-//transforme le fichier en binary
-  fileChanged(event: any, name: string) {
-    const reader = new FileReader();
-    const file = event.target.files[0];
-    reader.readAsDataURL(file);
-    reader.onload = e => {
-      this.addForm.get(name)?.setValue(e.target?.result);
-    }
-  }
+
 
 }
