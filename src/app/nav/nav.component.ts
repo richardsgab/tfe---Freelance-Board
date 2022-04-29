@@ -6,12 +6,7 @@ import { Link } from '../models/links';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
-
-  // links! = Link[
-  //   { title : Home , url : "/"},
-  //   { title : AddProject , url: "/project-form"},
-  // ];
+export class NavComponent implements OnInit {  
 
   constructor() { }
 

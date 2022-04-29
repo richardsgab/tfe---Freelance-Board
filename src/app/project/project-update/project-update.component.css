@@ -1,6 +1,13 @@
+.titlebox{
+    width: 70vw;
+    border: 1px solid white;
+}
 h1{
     text-align: center;
-    margin-bottom: 50px;    
+    margin-bottom: 50px;        
+}
+.infobox{
+    width: 50vw;
 }
 .chapter{
     margin: 0 16px;   
@@ -24,6 +31,4 @@ a:link, a:visited {
 a:hover {
     color: rgb(212, 205, 205);
 }
-/* a:active {
-    color: gray;
-  } */
+
