@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserComponent } from '../user/user.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { FileComponent } from './file/file.component';
 import { InfoComponent } from './info/info.component';
@@ -10,7 +11,8 @@ import { ProjectComponent } from './project.component';
 import { ShowProjectsComponent } from './show-projects/show-projects.component';
 import { VisualsComponent } from './visuals/visuals.component';
 
-const routes: Routes = [{ path: '', component: ProjectComponent, children: [
+const routes: Routes = 
+[{ path: '', component: ProjectComponent, children: [
   { path: 'add', component: ProjectAddComponent, children: [
     { path: 'file', component: FileComponent}
   ]},
@@ -22,6 +24,7 @@ const routes: Routes = [{ path: '', component: ProjectComponent, children: [
   ]},
   { path: 'show', component: ShowProjectsComponent }
 ] }];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

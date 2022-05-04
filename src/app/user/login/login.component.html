@@ -1,0 +1,19 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title text-center mb-4 ms-5">Register</h4>
+            <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">     
+            <form [formGroup]="fg" (ngSubmit)="submit()">
+                <div class="form-group">
+                    <div class="mb-3"><input type="text" placeholder="username" formControlName="username"></div>
+                    <div class="mb-3"><input type="password" placeholder="Mot de passe" formControlName="password"></div>
+                    <div class="mb-3"><button class="btn btn-success" data-bs-dismiss="modal">Se Connecter</button></div>
+                </div>                
+            </form>            
+        </div>
+    </div>
+</div>

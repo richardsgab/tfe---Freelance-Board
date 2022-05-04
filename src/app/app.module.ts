@@ -7,12 +7,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,9 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule,
+    FormsModule    
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -66,7 +66,7 @@ export class ProjectAddComponent implements OnInit {
   addProject(){
     if(this.addForm.valid){
       console.log("🙌");
-      let projctadd : Project = {...this.addForm.value};
+      let projctadd : Project = { ...this.addForm.value };
 
       console.log(projctadd);
       
